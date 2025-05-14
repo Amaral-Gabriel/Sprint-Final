@@ -6,11 +6,11 @@
 
 ## :scroll: Indice
 
-- [Sobre o Projeto](#ℹ️-sobre-o-projeto)
-- [Como as Sprints se Conectam](#🔗-como-as-sprints-se-conectam)
-- [Tecnologias Utilizadas](#🛠️-tecnologias-utilizadas)
-- [Funcionalidades Implementadas](#✨-funcionalidades-implementadas)
-- [Como Executar/Testar](#▶️-como-executartestar)
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Como as Sprints se Conectam](#como-as-sprints-se-conectam)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Funcionalidades Implementadas](#funcionalidades-implementadas)
+- [Como Executar/Testar](#como-executartestar)
 - [Licença](#licença)
 
 ## ℹ️ Sobre o Projeto
