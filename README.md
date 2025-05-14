@@ -2,7 +2,16 @@
 
 Este repositório representa o culminar dos conhecimentos e projetos desenvolvidos ao longo do curso de Frontend da Ford Enter. O objetivo 🎯 deste projeto final é consolidar e apresentar de forma integrada o trabalho realizado nas diversas sprints, demonstrando a evolução e a aplicação prática das tecnologias e metodologias aprendidas.
 
+## :scroll:Indice
+
 ## ℹ️ Sobre o Projeto
+
+- [Sobre o Projeto](#ℹ️-sobre-o-projeto)
+- [Como as Sprints se Conectam](#🔗-como-as-sprints-se-conectam)
+- [Tecnologias Utilizadas](#🛠️-tecnologias-utilizadas)
+- [Funcionalidades Implementadas](#✨-funcionalidades-implementadas)
+- [Como Executar/Testar](#▶️-como-executartestar)
+- [Licença](#licença)
 
 O projeto final agrega as diferentes fases de desenvolvimento de aplicações web, começando pelos fundamentos de controlo de versão com Git e GitHub 🐙, passando pela construção de interfaces web estáticas e interativas com HTML, CSS e JavaScript 🌐, e culminando no desenvolvimento de uma aplicação mais complexa utilizando Angular, TypeScript e Bootstrap para um sistema interno de dashboard 📊.
 
