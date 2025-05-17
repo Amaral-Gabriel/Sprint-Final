@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ford Brasil</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="home-site.component.css">
+    <link rel="shortcut icon" href="../public/img/Favicon_Ford.png" type="image/x-icon">
+</head>
+<body>
+<app-header-site></app-header-site>
+
+<main>
+  <!-- Carrossel -->
+  
+  <section class="carousel">
+    <div class="carousel-container">
+      <a [href]="carouselItems[currentIndex].url" target="_blank">
+        <img class="image-container" [src]="carouselItems[currentIndex].image" [alt]="carouselItems[currentIndex].title">
+      </a>
+      
+      <h3 class="carousel-text">{{ carouselItems[currentIndex].title }}</h3>
+      
+      <!-- Controles -->
+      
+        <button id="controlPrev" (click)="prevSlide()">‹</button>
+        <button id="controlNext" (click)="nextSlide()">›</button>
+      
+    </div>
+  </section>
+
+  <!-- Seção de novidades -->
+  <section id="novidade">
+    <h1>Clique e conheça as novidades da Ford Ranger 2022!</h1>
+    <button class="botao_Ranger"><a href="lancamento.html">Nova Ranger <span class="material-icons-outlined">keyboard_arrow_right</span></a></button>
+  </section>
+</main>
+
+<app-footer-site></app-footer-site>
+
+    <script src="js/app.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/compare.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>

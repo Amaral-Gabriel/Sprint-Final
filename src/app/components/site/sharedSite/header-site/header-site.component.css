@@ -1,0 +1,146 @@
+:root {
+    --cor-azul-escuro: #1b357e;
+    --cor-azul-claro: #1351d8;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+    padding: 4% 8%;
+    height: 100px;
+    font-family: "Antenna", Arial, Helvetica, sans-serif;
+}
+
+.cabecalho {
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > .cabecalho > img {
+    max-height: 40px;
+    width: auto;
+    padding: 0;
+    margin: 0;
+}
+
+#menu_Bar {
+    display: none;
+    justify-self: center;
+    align-self: center;
+}
+
+#itens {
+    padding-top: 0;
+    margin-top: 0;
+    padding-left: 15px;
+    height: 100vh; 
+    width: 0; 
+    position: fixed;
+    z-index: 5; 
+    top: 0;
+    right: -20%; 
+    background-color: var(--cor-azul-escuro);
+    overflow-x: hidden; 
+    transition: width 0.3s ease, right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 350px;
+}
+
+#itens > ul {
+    padding: 50px 5px;
+    margin: 0;
+    transition: opacity 1.5s ease;
+    opacity: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+}
+
+#itens > ul > li > a {
+    list-style: none;
+    padding: 10px 0px; 
+    margin: 0; 
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: flex; 
+    align-items: center;
+    transition: 0.5s;
+}
+
+#itens > ul > li > a > span {
+    padding-right: 15px;
+}
+
+#itens.aberto {
+    width: 70%; 
+    right: 0; 
+}
+
+#itens.aberto > ul {
+    opacity: 1; 
+}
+
+#menu_Burguer {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    border: 0;
+    background-color: white;
+    color: var(--cor-azul-escuro);
+    font-size: 30px;
+    top: 31px;
+    right: 25px;
+}
+
+#close_Burguer {
+    position: absolute;
+    top: 31px;
+    right: 25px;
+    border: 0;
+    cursor: pointer;
+    font-size: 30px;
+    background-color: var(--cor-azul-escuro);
+    color: white;
+    z-index: 6;
+}
+
+.opcao {
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+}
+  
+.opcao::after,
+.opcao::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, rgb(38, 86, 219), white );
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+  
+.opcao::before {
+    top: -5px;
+    transform-origin: left;
+}
+  
+.opcao:hover::after,
+.opcao:hover::before {
+    transform: scaleX(1);
+}

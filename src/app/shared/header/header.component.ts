@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   constructor(private router: Router) {}
 
-  logout() { // Remove acesso do usuário
+  logout() { 
     localStorage.removeItem('token');
     localStorage.removeItem('isLoggedIn');
     this.router.navigate(['/login'], { replaceUrl: true }).then(() => {

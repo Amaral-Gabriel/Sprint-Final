@@ -1,0 +1,64 @@
+footer {
+    background-color: var(--cor-azul-escuro);
+    width: 100vw;
+    height: auto;
+    max-height: 150px;
+    min-height: 80px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.informacoes_Footer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 80px;
+    font-size: small;
+    justify-items: stretch;
+    align-items: center;
+    padding: 10px;
+}
+
+.redes_Sociais {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: small;
+}
+
+.redes_Sociais > p {
+    width: 90px;
+}
+
+.logo_Redes > a > img {
+    width: 1.4rem;
+    max-width: 40px;
+    min-width: 20px;
+    height: auto;
+    object-fit: contain;
+    padding: 5px 0;
+    margin-left: 2vw;
+}
+
+.logo_Redes > a > img:hover {
+    transform: scale(1.2);
+}
+
+.copy_Right {
+    color: white;
+    font-size: small;
+    grid-column: 1/ span 2;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.copy_Right_Logo > img {
+    width: 80px;
+    object-fit: contain;
+    display: flex;
+    justify-self: end;
+    align-self: center;
+}
