@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+  
+  body {
+    height: 100vh;  
+    
+}
+
+.bgBig {
+    -webkit-mask-image: linear-gradient(to top, black, black, transparent);
+    mask-image: linear-gradient(to top, black, black, transparent);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    background-position: center;
+    height: 100vh;  
+    overflow: hidden;
+    z-index: 1;
+}
+
+.welcome {
+    margin: 0;
+    z-index: 2; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; 
+    max-width: 600px; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    text-align: center; 
+}
+
+.fordFont {
+    color: var(--ford-color);
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.text-Welcome {
+    color: var(--ford-color);
+    font-size: 2rem; 
+}
+
+.svg {
+    width: 80px;
+    height: auto;
+}
+
+.btnNews {
+    transition: all 0.3s ease-in-out;
+    width: 200px;
+    height: 40px;
+    border-radius: 40px;
+    margin-top: 100px;
+    background-image: linear-gradient(135deg, #1b357e 0%, #1351d8 50%, #265ed6 100%);
+    box-shadow: 0 20px 30px -6px #265ed656;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.btnNews:hover {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.btnNews:active {
+    opacity: 0.5;
+}
+
+
+@media (max-width: 768px) {
+    .welcome {
+        width: 95%; 
+        padding: 10px; 
+    }
+
+    .text-Welcome {
+        font-size: 1.5rem; 
+    }
+
+    .btnNews {
+        width: 180px; 
+        font-size: 0.9rem;
+    }
+}
+
+
+
+.offcanvas-body {
+    margin: 0 !important;
+}
+
+.card {
+    transition: all 0.9s ease-in-out;
+    width: 400px;
+    height: 300px;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card > img {
+    width: 100%;
+    height: auto;
+}
+
+.card-img {
+    height: 150px;              
+    width: 100%;                 
+    object-fit: contain;         
+    background-color: #fff;      
+    border-radius: 4px;
+}
+

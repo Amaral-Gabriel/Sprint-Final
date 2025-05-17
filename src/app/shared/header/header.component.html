@@ -1,0 +1,40 @@
+<!-- Menu button -->
+<button class="btn position-absolute top-0 start-0 z-3" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
+        style="color: var(--ford-color)">
+  <h1><i class="bi bi-list"></i></h1>
+</button>
+
+<!-- Logout button -->
+<button (click)="logout()" class="logoutBtn btn position-absolute top-0 z-3" style="color: var(--ford-color)">
+  <h2><i class="bi bi-box-arrow-right"></i></h2>
+</button>
+
+<!-- Menu burguer (Offcanvas) -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+  <div class="offcanvas-header">
+    <!-- Logo -->
+    <h5 class="offcanvas-title" id="offcanvasMenuLabel">
+      <img src="img/ford.png" alt="Logo Ford" style="height: 40px;">
+    </h5>
+    <!-- Close side bar -->
+    <button type="button" style="color: var(--ford-color)" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <!-- Home page -->
+  <div class="offcanvas-body p-0 m-0">
+    <a role="button" 
+    class="text-decoration-none text-dark d-block w-100">
+      <div class="card bg-body-secondary border-0 border-bottom rounded-0 w-100">
+        <div class="card-body" routerLinkActive="actual"
+        [routerLinkActiveOptions]="{ exact: true }" routerLink="/home" ><h5 class="card-title mb-0">Home</h5></div>
+      </div>
+    </a>
+    <!-- DashBoard page -->
+    <a role="button"  class="text-decoration-none text-dark d-block w-100">
+      <div class="card bg-body-secondary border-0 border-top rounded-0 w-100">
+        <div class="card-body " routerLinkActive="actual"
+        [routerLinkActiveOptions]="{ exact: true }" routerLink="/dashboard"><h5 class="card-title mb-0">Dashboard</h5></div>
+      </div>
+    </a>
+  </div>
+</div>

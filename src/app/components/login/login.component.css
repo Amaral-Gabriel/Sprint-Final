@@ -1,0 +1,124 @@
+*{
+    color: var(--ford-color);
+    box-sizing: border-box;
+}
+
+#textWelcome { /* Welcome text gradient */
+    background: -webkit-linear-gradient(#1099D3, #002552 ,#2B2B33);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Switch  */
+.custom-switch {
+    position: relative;
+    display: inline-block;
+    min-width: 60px;
+    height: 30px;
+    cursor: pointer;
+}
+  
+.custom-input-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+  
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 128, 128, 0.2);
+    border: 2px solid transparent;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+  
+.custom-input-checkbox:checked + .slider {
+    background: #ffffff;  
+    background: -webkit-linear-gradient(to right, #103dd3, #002552);  
+    background: linear-gradient(to right, #1064d3, #002552); 
+    color: #fff;
+}
+  
+.custom-input-checkbox:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Logo image */
+.img_Logo {
+    height: auto;
+    width: 80px;
+}
+
+@media (min-width: 768px) {
+    .img_Logo {
+        width: 120px;
+    }
+}
+@media (min-width: 992px) {
+    .img_Logo {
+        width: 160px;
+    }
+}
+
+  /* Button login */
+  .btn_Login {
+    transition: 0.5 ease;
+}
+
+.btn_Login:hover {
+    scale: 1.01;
+    color: white;
+}
+
+.btn-dark-moon {
+    background: #ffffff;  
+    background: -webkit-linear-gradient(to right, #1099D3, #002552 ,#2B2B33);  
+    background: linear-gradient(to right, #1099D3, #002552 ,#2B2B33); 
+    color: #fff;
+}
+
+/* Left background */
+.whiteBG {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.6)70%, rgba(233,236,239));
+    width: 60%;
+    height: 100vh;
+    position: absolute;
+    z-index: 50;
+    opacity: 100%;
+}
+
+/* View password */
+input[type="password"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+
+/* Wave botton */
+.wave {
+    position: absolute;
+    bottom: 0;
+
+    z-index: 1000;
+}
+  
+

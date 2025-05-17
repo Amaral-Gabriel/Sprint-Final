@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.text-primary {
+    color: var(--ford-color) !important;
+}
+
+/* Title */
+.card-header {
+    color: white;
+    background-color: var(--ford-color) !important;
+    border-radius: 0;
+}
+
+.title {
+    margin: 30px 0;
+}
+
+/* Car Image */
+.imgCar  {
+    height: auto;
+    width: 500px;
+}
+
+/* Table botton */
+thead {
+    background-color: var(--ford-color);;
+    color: white;
+  }
+
+.bg-primary {
+    background-color: var(--ford-color);;
+}
+
+.botton {
+    margin: 0;
+    padding: 0;
+    background-color: var(--ford-color);;
+    width: 100%;
+    height: 30px;
+    border: solid 2px black;
+}
+
+table.tabela thead th {
+    background-color: var(--ford-color);; 
+    color: white;
+    
+}
+
+tbody, td {
+    background-color: white !important;
+}
+
+th, thead, table {
+    border: solid 1px grey;
+}
+
+table.tabela tbody{
+    border-bottom: 30px solid var(--ford-color);
+}
+
+
+@media (max-width: 576px) {
+    .card {
+      max-width: 300px;
+      margin: 0 auto;   
+    }
+}
+
+.border-danger {
+    border: 2px solid red !important;
+}

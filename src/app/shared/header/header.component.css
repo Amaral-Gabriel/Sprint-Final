@@ -1,0 +1,13 @@
+.actual::before {
+    content: "";
+    position: absolute; 
+    left: 0; 
+    top: 0;
+    width: 4px; 
+    height: 100%; 
+    background-color: #E85D0C; 
+}
+
+.logoutBtn {
+    right: 5px;
+}
