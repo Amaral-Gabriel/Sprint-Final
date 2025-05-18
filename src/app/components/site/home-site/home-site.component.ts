@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { HeaderSiteComponent } from '../sharedSite/header-site/header-site.component';
 import { FooterSiteComponent } from '../sharedSite/footer-site/footer-site.component'; 
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home-site',
   standalone: true,
-  imports: [CommonModule, HeaderSiteComponent, FooterSiteComponent],
+  imports: [CommonModule, HeaderSiteComponent, FooterSiteComponent, RouterModule, RouterLink],
   templateUrl: './home-site.component.html',
   styleUrls: ['./home-site.component.css']
 })
@@ -16,7 +17,7 @@ export class HomeSiteComponent {
     {
       image: "img/imagem_1.jpg",
       title: "Esta é a nova Ranger Ford 2022",
-      url: "lancamento"
+      url: "/lancamentos"
     },
     {
       image: "img/imagem_2.jpg",
@@ -26,25 +27,23 @@ export class HomeSiteComponent {
     {
       image: "img/imagem_3.jpg",
       title: "Nova Ford Bronco Sport 2022",
-      url: "#"
+      url: "https://www.ford.com.br/suvs-e-crossovers/bronco-sport/"
     }
   ];
   currentIndex = 0;
 
- 
+  constructor(private router: Router) {}
 
-  // Muda para o próximo slide
+  isExternalLink(url: string): boolean {
+  return url.startsWith('https://');
+}
+
   nextSlide() {
     this.currentIndex = (this.currentIndex + 1) % this.carouselItems.length;
   }
-
   // Muda para o slide anterior
   prevSlide() {
     this.currentIndex = (this.currentIndex - 1 + this.carouselItems.length) % this.carouselItems.length;
   }
 
-  // Vai para um slide específico
-  goToSlide(index: number) {
-    this.currentIndex = index;
-  }
 }

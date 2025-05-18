@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ford Brasil</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <link rel="stylesheet" href="home-site.component.css">
     <link rel="shortcut icon" href="../public/img/Favicon_Ford.png" type="image/x-icon">
 </head>
@@ -15,21 +14,36 @@
 <main>
   <!-- Carrossel -->
   
+  
+
   <section class="carousel">
-    <div class="carousel-container">
-      <a [href]="carouselItems[currentIndex].url" target="_blank">
-        <img class="image-container" [src]="carouselItems[currentIndex].image" [alt]="carouselItems[currentIndex].title">
-      </a>
-      
-      <h3 class="carousel-text">{{ carouselItems[currentIndex].title }}</h3>
-      
-      <!-- Controles -->
-      
-        <button id="controlPrev" (click)="prevSlide()">‹</button>
-        <button id="controlNext" (click)="nextSlide()">›</button>
-      
-    </div>
-  </section>
+  <div class="carousel-container">
+    
+    <!-- Link EXTERNO -->
+    <a *ngIf="isExternalLink(carouselItems[currentIndex].url)"
+      [href]="carouselItems[currentIndex].url" target="_blank">
+      <img class="image-container" 
+          [src]="carouselItems[currentIndex].image" 
+          [alt]="carouselItems[currentIndex].title">
+    </a>
+
+    <!-- Link INTERNO -->
+    <a *ngIf="!isExternalLink(carouselItems[currentIndex].url)"
+      [routerLink]="carouselItems[currentIndex].url">
+      <img class="image-container" 
+          [src]="carouselItems[currentIndex].image" 
+          [alt]="carouselItems[currentIndex].title">
+    </a>
+    
+    <!-- Título do slide -->
+    <h3 class="carousel-text">{{ carouselItems[currentIndex].title }}</h3>
+    
+
+      <button id="controlPrev" (click)="prevSlide()">‹</button>
+      <button id="controlNext" (click)="nextSlide()">›</button>
+
+  </div>
+</section>
 
   <!-- Seção de novidades -->
   <section id="novidade">

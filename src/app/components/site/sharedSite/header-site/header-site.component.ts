@@ -1,14 +1,20 @@
 import { Component, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router, RouterLink, RouterModule } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-header-site',
-  standalone: true, // <- ESSENCIAL!
-  imports: [],
+  standalone: true,
+  imports: [CommonModule ,RouterModule, RouterLink ],
   templateUrl: './header-site.component.html',
   styleUrls: ['./header-site.component.css']
 })
 
 export class HeaderSiteComponent {
+
+
   // Abre o menu
   openBurguer(): void {
     const menu = document.getElementById('itens');

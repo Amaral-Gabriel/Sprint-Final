@@ -31,10 +31,49 @@ header > .cabecalho > img {
 }
 
 #menu_Bar {
+    padding: 0;
+    margin: 0;
+    top: 10px;
     display: none;
-    justify-self: center;
-    align-self: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0 5vw;
 }
+
+#menu_Bar > a {
+        
+    font-family: "Antenna", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: var(--cor-azul-escuro);
+    font-weight: bold;
+    font-size: 2vw;
+    }
+
+
+@media only screen and (min-width: 768px) {
+    #menu_Bar {
+        display: flex;
+    }
+    #menu_Burguer {
+        display: none;
+    }
+}
+
+#menu_Burguer {
+
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    border: 0;
+    background-color: white;
+    color: var(--cor-azul-escuro);
+    font-size: 30px;
+    top: 31px;
+    right: 25px;
+}
+
+
 
 #itens {
     padding-top: 0;
@@ -91,17 +130,8 @@ header > .cabecalho > img {
     opacity: 1; 
 }
 
-#menu_Burguer {
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    border: 0;
-    background-color: white;
-    color: var(--cor-azul-escuro);
-    font-size: 30px;
-    top: 31px;
-    right: 25px;
-}
+
+
 
 #close_Burguer {
     position: absolute;
@@ -116,7 +146,7 @@ header > .cabecalho > img {
 }
 
 .opcao {
-    color: #ffffff;
+    color: var(--cor-azul-escuro);
     position: relative;
     display: inline-block;
 }

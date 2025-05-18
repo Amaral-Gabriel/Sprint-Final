@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="header-site.component.css">
 
 </head>
 <body>
@@ -19,17 +20,17 @@
             <button href="javascript:void(0)" id="close_Burguer" class="material-icons-outlined" (click)="closeBurguer()">close</button>
             <ul>
                 <li>
-                    <a href="index.html"><span class="material-icons-outlined">home</span> Home</a></li>
+                    <a href="index.html" [routerLink]="'/home-site'"><span class="material-icons-outlined">home</span> Home</a></li>
                 <li>
-                    <a href="lancamento.html"><span class="material-icons-outlined">directions_car</span> Lançamento</a></li>
+                    <a href="lancamento.html" [routerLink]="'/lancamentos'"><span class="material-icons-outlined">directions_car</span> Lançamento</a></li>
                 <li>
-                    <a href="contato.html"><span class="material-icons-outlined">call</span> Contato</a></li>
+                    <a href="contato.html" [routerLink]="'/contato'"><span class="material-icons-outlined">call</span> Contato</a></li>
             </ul>
         </nav>
         <nav id="menu_Bar">
-            <a class="opcao" href="index.html">Home</a>
-            <a class="opcao" href="lancamento.html">Lançamento</a>
-            <a class="opcao" href="contato.html">Contato</a>
+            <a class="opcao" [routerLink]="'/home-site'">Home</a>
+            <a class="opcao" [routerLink]="'/lancamentos'">Lançamentos</a>
+            <a class="opcao" [routerLink]="'/contato'">Contato</a>
         </nav>
     </header>
 
