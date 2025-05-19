@@ -64,18 +64,23 @@
 
 /* Logo image */
 .img_Logo {
+    position: absolute;
+    top: -19px;
     height: auto;
-    width: 80px;
+    width: 100px;
 }
 
 @media (min-width: 768px) {
     .img_Logo {
-        width: 120px;
+        position: absolute;
+        max-width: 100px;
+        top: 30px;
+        display: block;
     }
 }
 @media (min-width: 992px) {
     .img_Logo {
-        width: 160px;
+        max-width: 140px;
     }
 }
 
