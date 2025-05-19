@@ -1,0 +1,127 @@
+:root {
+    --cor-azul-escuro: #1b357e;
+    --cor-azul-claro: #1351d8;
+}
+
+
+@font-face {
+    font-family: "Antenna";
+    src: url("/assets/font/Antenna-Regular.otf") format("opentype");
+}
+
+.material-icons {
+    font-family: 'Material Icons' !important;
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Antenna", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+
+}
+
+/* Layout Principal */
+main {
+    background-color: white;
+    flex: 1;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow-y: hidden;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Tabela de Comparação */
+#div_Comparacao {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid rgba(92, 92, 92, 0.548);
+    border-radius: 20px;
+    padding: 10px;
+    display: none;
+}
+
+.row_Comparacao:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.row_Comparacao td {
+    padding: 10px 5px;
+}
+
+.tabela  {
+    background-color: rgb(255, 167, 53);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+
+/* Responsividade */
+@media (min-width: 600px) {
+    .video-container { height: 60vh; }
+}
+
+.botao_Ranger {
+    transition: all 0.3s ease-in-out;
+    width: 200px;
+    height: 60px;
+    border-radius: 50px;
+    background-image: linear-gradient(135deg, #1b357e  0%, #1351d8 50%, #265ed6  100%);
+    box-shadow: 0 20px 30px -6px #265ed656;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: 24px;
+    color: white;
+    margin: 20px 0;
+}
+
+.botao_Ranger > a {
+    color: white;
+}
+  
+.botao_Ranger:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+  
+.botao_Ranger:active {
+    opacity: 0.5;
+}
+
+.titulo_Carro {
+    text-decoration: none;
+    text-align: center;
+
+}

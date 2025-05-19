@@ -12,14 +12,14 @@
 <app-header-site></app-header-site>
 
 <main>
-  <!-- Carrossel -->
+  
   
   
 
   <section class="carousel">
   <div class="carousel-container">
     
-    <!-- Link EXTERNO -->
+   
     <a *ngIf="isExternalLink(carouselItems[currentIndex].url)"
       [href]="carouselItems[currentIndex].url" target="_blank">
       <img class="image-container" 
@@ -27,7 +27,7 @@
           [alt]="carouselItems[currentIndex].title">
     </a>
 
-    <!-- Link INTERNO -->
+  
     <a *ngIf="!isExternalLink(carouselItems[currentIndex].url)"
       [routerLink]="carouselItems[currentIndex].url">
       <img class="image-container" 
@@ -35,7 +35,7 @@
           [alt]="carouselItems[currentIndex].title">
     </a>
     
-    <!-- Título do slide -->
+   
     <h3 class="carousel-text">{{ carouselItems[currentIndex].title }}</h3>
     
 
@@ -45,7 +45,7 @@
   </div>
 </section>
 
-  <!-- Seção de novidades -->
+ 
   <section id="novidade">
     <h1>Clique e conheça as novidades da Ford Ranger 2022!</h1>
     <button class="botao_Ranger"><a href="lancamento.html">Nova Ranger <span class="material-icons-outlined">keyboard_arrow_right</span></a></button>
