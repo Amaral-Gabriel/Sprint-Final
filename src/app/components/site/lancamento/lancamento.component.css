@@ -120,8 +120,8 @@ iframe {
     opacity: 0.5;
 }
 
-.titulo_Carro {
+.titulo_Carro > a{
     text-decoration: none;
     text-align: center;
-
+    color: red;
 }

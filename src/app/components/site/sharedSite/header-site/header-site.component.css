@@ -174,3 +174,11 @@ header > .cabecalho > img {
 .opcao:hover::before {
     transform: scaleX(1);
 }
+
+.login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
+}

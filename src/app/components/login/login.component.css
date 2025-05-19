@@ -112,12 +112,10 @@ input[type="password"] {
     -webkit-appearance: none;
 }
 
-
 /* Wave botton */
 .wave {
     position: absolute;
     bottom: 0;
-
     z-index: 1000;
 }
   
