@@ -103,12 +103,14 @@
 
 /* Left background */
 .whiteBG {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.6)70%, rgba(233,236,239));
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.6)70%, rgba(233,236,239,1));
+    background-image: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.6)70%, rgba(233,236,239,1));
+    background-image: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.6)70%, rgba(233,236,239,1));
     width: 60%;
     height: 100vh;
     position: absolute;
     z-index: 50;
-    opacity: 100%;
+    opacity: 1;
 }
 
 /* View password */
