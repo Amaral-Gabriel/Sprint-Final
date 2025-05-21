@@ -1,0 +1,11 @@
+{
+  "routes": {
+    "/Sprint-Final": {},
+    "/Sprint-Final/contato": {},
+    "/Sprint-Final/dashboard": {},
+    "/Sprint-Final/home": {},
+    "/Sprint-Final/home-site": {},
+    "/Sprint-Final/lancamentos": {},
+    "/Sprint-Final/login": {}
+  }
+}
