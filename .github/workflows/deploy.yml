@@ -1,0 +1,42 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build -- --configuration production
+
+      - name: Prepare for deployment
+        run: |
+          # Criar pasta temporária
+          mkdir -p tmp-deploy
+          # Copiar conteúdo da pasta browser para a pasta temporária
+          cp -r dist/Sprint-Final/browser/* tmp-deploy/
+          # Copiar .nojekyll se existir
+          [ -f dist/Sprint-Final/.nojekyll ] && cp dist/Sprint-Final/.nojekyll tmp-deploy/
+          # Criar arquivo index.html na raiz se não existir
+          [ ! -f tmp-deploy/index.html ] && [ -f tmp-deploy/index.csr.html ] && cp tmp-deploy/index.csr.html tmp-deploy/index.html
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: tmp-deploy
+          branch: gh-pages
