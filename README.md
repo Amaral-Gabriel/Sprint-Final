@@ -91,7 +91,7 @@ A trilha de desenvolvimento foi dividida em várias sprints, cada uma com objeti
 ## ✨ Funcionalidades
 
 ### Estrutura e Estilização de Website
-- Layouts responsivos e visualmente atraentes
+- Layouts responsivos
 - Headers, footers, seções de conteúdo, galerias de imagens e formulários
 - Design adaptável para dispositivos móveis e desktop
 
@@ -127,10 +127,6 @@ A trilha de desenvolvimento foi dividida em várias sprints, cada uma com objeti
 
 ## 🚀 Como Executar
 
-### Pré-requisitos
-- Node.js (versão 16.x ou superior)
-- npm (versão 8.x ou superior)
-- Angular CLI (versão 16.x ou superior)
 
 ### Instalação
 
