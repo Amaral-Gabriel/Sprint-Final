@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "baseHref": "/Sprint-Final/",
-            "outputPath": "dist/dash-ford",
+            "outputPath": "dist/Sprint-Final",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
