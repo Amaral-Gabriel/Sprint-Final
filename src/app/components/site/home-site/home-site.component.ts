@@ -3,6 +3,7 @@ import { HeaderSiteComponent } from '../sharedSite/header-site/header-site.compo
 import { FooterSiteComponent } from '../sharedSite/footer-site/footer-site.component'; 
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterModule } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home-site',
@@ -32,7 +33,11 @@ export class HomeSiteComponent {
   ];
   currentIndex = 0;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private titleService: Title) {}
+
+  ngOnInit(): void {
+    this.titleService.setTitle('Home Ford');
+  }
 
   isExternalLink(url: string): boolean {
   return url.startsWith('https://');

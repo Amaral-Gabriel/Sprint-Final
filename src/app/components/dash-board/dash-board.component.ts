@@ -3,6 +3,7 @@ import { ApiService } from '../../api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from '../../shared/header/header.component';
+import { Title } from '@angular/platform-browser';
 
 
 
@@ -27,9 +28,10 @@ export class DashBoardComponent implements OnInit {
   inputInvalido: boolean = false;
   nameVehicles: string = "";
   
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private titleService: Title) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('DashFord');
     this.loadVehicles();
   }
 

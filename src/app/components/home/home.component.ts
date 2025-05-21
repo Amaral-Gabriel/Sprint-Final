@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../shared/header/header.component';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class HomeComponent implements OnInit {
   
   constructor(
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object 
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private titleService: Title
   ) {}
 
   cards = [ // List of  vehicles
@@ -31,6 +33,7 @@ export class HomeComponent implements OnInit {
   setId: number = 0;
 
   ngOnInit() {
+    this.titleService.setTitle('Home DashFord');
     this.setBgImage();
   }
 

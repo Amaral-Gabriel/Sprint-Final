@@ -36,13 +36,13 @@
 }
 
 .fordFont {
-    color: var(--ford-color);
+    color: #00142E;
     font-style: italic;
     font-weight: bolder;
 }
 
 .text-Welcome {
-    color: var(--ford-color);
+    color: #00142E;
     font-size: 2rem; 
 }
 

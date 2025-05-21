@@ -5,12 +5,13 @@ import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { HomeSiteComponent } from './components/site/home-site/home-site.component';
 import { LancamentoComponent } from './components/site/lancamento/lancamento.component';
-// import { ContatoComponent } from './components/site/contato/contato.component';
+import { ContatoComponent } from './components/site/contato/contato.component';
+
 
 export const routes: Routes = [
     {
         path: "",
-        redirectTo: "login",
+        redirectTo: "home-site",
         pathMatch: "full"
     },
     { 
@@ -30,9 +31,9 @@ export const routes: Routes = [
     { 
         path: "lancamentos",
         component:LancamentoComponent
-    }//,
-    // { 
-    //     path: "contato",
-    //     component: ContatoComponent
-    // }
+    },
+    { 
+        path: "contato",
+        component: ContatoComponent
+    }
 ];

@@ -11,13 +11,13 @@ body {
 }
 
 .text-primary {
-    color: var(--ford-color) !important;
+    color: #00095B !important;
 }
 
 /* Title */
 .card-header {
     color: white;
-    background-color: var(--ford-color) !important;
+    background-color: #00095B !important;
     border-radius: 0;
 }
 
@@ -33,25 +33,25 @@ body {
 
 /* Table botton */
 thead {
-    background-color: var(--ford-color);;
+    background-color: #00095B;
     color: white;
   }
 
 .bg-primary {
-    background-color: var(--ford-color);;
+    background-color: #00095B;
 }
 
 .botton {
     margin: 0;
     padding: 0;
-    background-color: var(--ford-color);;
+    background-color: #00095B;
     width: 100%;
     height: 30px;
     border: solid 2px black;
 }
 
 table.tabela thead th {
-    background-color: var(--ford-color);; 
+    background-color: #00095B; 
     color: white;
     
 }
@@ -65,7 +65,7 @@ th, thead, table {
 }
 
 table.tabela tbody{
-    border-bottom: 30px solid var(--ford-color);
+    border-bottom: 30px solid #00095B;
 }
 
 

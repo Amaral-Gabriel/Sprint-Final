@@ -10,22 +10,105 @@
     </iframe>
   </div>
 
-        <table class="tabela"> <!-- Tabela de carros -->
-            <tr>
-                <!-- Elementos da tabela vão aqui -->
-            </tr>
+  <table class="tabela">
+    <tr class="table_Cars">
+      <td *ngFor="let car of carInstances; let i = index">
+        <img [src]="car.image" [alt]="car.nome">
+        <div class="info_Carro">
+          <div class="titulo_Carro">
+            <a href="#"><p>{{ car.nome }}</p></a>
+          </div>
+          <div class="titulo_Preco">
+            <input type="checkbox" name="compare" class="input_Box" 
+                  [attr.data-car-index]="car.index"
+                  (change)="onCheckboxChange($event, car.index)">
+            <p class="preco">A partir de R$ {{ car.preco }} <a href=""><img id="simbolo_Info" src="img/info.png" alt="Simbolo de informação"></a></p>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <section id="section_Btn">
+    <div id="compare">
+      <button class="botao_Ranger"(click)="showCompare($event)">Comparar</button>
+    </div>
+
+    <div id="erro_Div" [style.display]="errorMessage ? 'flex' : 'none'">
+      <span id="erro_Span">{{ errorMessage }}</span>
+    </div>
+  </section>
+
+  <!-- Modal de comparação -->
+  <div class="modal-overlay" [class.active]="showCompareTable" (click)="onOverlayClick($event)">
+    <div class="modal-dialog" (click)="onDialogClick($event)">
+      <div class="modal-header">
+        <h2>Comparação de Veículos</h2>
+        <button class="modal-close" (click)="hideCompare()">×</button>
+      </div>
+      <div class="modal-content">
+        <table class="tabela_Comparacao">
+          <tr>
+            <th></th>
+            <th id="compare_image_0">
+              <img *ngIf="carsToCompare.length > 0" class="image_Table" [src]="carsToCompare[0]?.image">
+            </th>
+            <th id="compare_image_1">
+              <img *ngIf="carsToCompare.length > 1" class="image_Table" [src]="carsToCompare[1]?.image">
+            </th>
+          </tr>
+          <tr>
+            <td class="tdTitle">Modelo</td>
+            <td id="compare_modelo_0">{{ carsToCompare.length > 0 ? carsToCompare[0]?.nome : '' }}</td>
+            <td id="compare_modelo_1">{{ carsToCompare.length > 1 ? carsToCompare[1]?.nome : '' }}</td>
+          </tr>
+          <tr>
+            <td class="tdTitle">Altura do Veículo (mm)</td>
+            <td id="compare_alturaveiculo_0">{{ carsToCompare.length > 0 ? carsToCompare[0]?.alturaVeiculo : '' }}</td>
+            <td id="compare_alturaveiculo_1">{{ carsToCompare.length > 1 ? carsToCompare[1]?.alturaVeiculo : '' }}</td>
+          </tr>
+          <tr>
+            <td class="tdTitle">Altura do Solo (mm)</td>
+            <td id="compare_alturasolo_0">{{ carsToCompare.length > 0 ? carsToCompare[0]?.alturaSolo : '' }}</td>
+            <td id="compare_alturasolo_1">{{ carsToCompare.length > 1 ? carsToCompare[1]?.alturaSolo : '' }}</td>
+          </tr>
+          <tr>
+            <td class="tdTitle">Capacidade de Carga (kg)</td>
+            <td id="compare_capacidadecarga_0">{{ carsToCompare.length > 0 ? carsToCompare[0]?.capacidadeCarga : '' }}</td>
+            <td id="compare_capacidadecarga_1">{{ carsToCompare.length > 1 ? carsToCompare[1]?.capacidadeCarga : '' }}</td>
+          </tr>
+          <tr>
+            <td class="tdTitle">Motor</td>
+            <td id="compare_motor_0">{{ carsToCompare.length > 0 ? carsToCompare[0]?.motor : '' }}</td>
+            <td id="compare_motor_1">{{ carsToCompare.length > 1 ? carsToCompare[1]?.motor : '' }}</td>
+          </tr>
+          <tr>
+            <td class="tdTitle">Potência</td>
+            <td id="compare_potencia_0">{{ carsToCompare.length > 0 ? carsToCompare[0]?.potencia : '' }}</td>
+            <td id="compare_potencia_1">{{ carsToCompare.length > 1 ? carsToCompare[1]?.potencia : '' }}</td>
+          </tr>
+          <tr>
+            <td class="tdTitle">Volume da Caçamba (L)</td>
+            <td id="compare_volumecacamba_0">{{ carsToCompare.length > 0 ? carsToCompare[0]?.volumeCacamba : '' }}</td>
+            <td id="compare_volumecacamba_1">{{ carsToCompare.length > 1 ? carsToCompare[1]?.volumeCacamba : '' }}</td>
+          </tr>
+          <tr>
+            <td class="tdTitle">Rodas</td>
+            <td id="compare_roda_0">{{ carsToCompare.length > 0 ? carsToCompare[0]?.roda : '' }}</td>
+            <td id="compare_roda_1">{{ carsToCompare.length > 1 ? carsToCompare[1]?.roda : '' }}</td>
+          </tr>
+          <tr>
+            <td class="tdTitle">Preço</td>
+            <td id="compare_preco_0">{{ carsToCompare.length > 0 ? carsToCompare[0]?.preco : '' }}</td>
+            <td id="compare_preco_1">{{ carsToCompare.length > 1 ? carsToCompare[1]?.preco : '' }}</td>
+          </tr>
         </table>
-
-
-        <section id="section_Btn">
-            <div id="compare">
-                <button class="botao_Ranger"><a href="#">Comparar</a></button>
-            </div>
-    
-            <div id="erro_Div">
-                <span id="erro_Span"></span>
-            </div>
-        </section>
+      </div>
+      <div class="modal-footer">
+        <button class="botao_Fechar" (click)="hideCompare()">Fechar</button>
+      </div>
+    </div>
+  </div>
 </main>
 
 <app-footer-site></app-footer-site>

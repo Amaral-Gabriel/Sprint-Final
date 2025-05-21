@@ -1,96 +1,418 @@
-:root {
-    --cor-azul-escuro: #1b357e;
-    --cor-azul-claro: #1351d8;
-}
 
-
-@font-face {
-    font-family: "Antenna";
-    src: url("/assets/font/Antenna-Regular.otf") format("opentype");
-}
-
-.material-icons {
-    font-family: 'Material Icons' !important;
-    font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-body {
-    font-family: "Antenna", Arial, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+.tabela_Comparacao {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #00142E;
 
 }
 
-/* Layout Principal */
-main {
-    background-color: white;
-    flex: 1;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-}
-
+/* Vídeo */
 .video-container {
+    display: block;
     width: 100%;
     aspect-ratio: 16/9;
-    overflow-y: hidden;
 }
 
-iframe {
+#video_Principal {
     width: 100%;
     height: 100%;
 }
 
-/* Tabela de Comparação */
-#div_Comparacao {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    border: 2px solid rgba(92, 92, 92, 0.548);
-    border-radius: 20px;
-    padding: 10px;
-    display: none;
-}
-
-.row_Comparacao:nth-child(even) {
-    background-color: #dddddd;
-}
-
-.row_Comparacao td {
-    padding: 10px 5px;
-}
-
-.tabela  {
-    background-color: rgb(255, 167, 53);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-
-/* Responsividade */
 @media (min-width: 600px) {
-    .video-container { height: 60vh; }
+    .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 60vh;
+    }
+    header > .cabecalho > img {
+        max-height: 50px;
+    }
+}  
+
+.tabela_Comparacao th,
+.tabela_Comparacao td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid ;
+  transition: background-color 0.3s ease;
 }
+
+.tabela_Comparacao th {
+  background-color: white; 
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tabela_Comparacao tr:first-child th:first-child {
+  background-color: white;
+  border-top-left-radius: 8px;
+}
+
+.tabela_Comparacao tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela_Comparacao tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.tabela_Comparacao tr:hover td {
+  background-color: #d3d8ff;
+}
+
+.tabela_Comparacao td:first-child {
+  font-weight: 600;
+  text-align: left;
+  background-color: #f0f2f5;
+  color: #00142E;
+  width: 3%;
+}
+
+.image_Table {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image_Table:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para o Modal Dialog */
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.modal-dialog {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(20px);
+  animation: slideUp 0.3s ease-out forwards;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #00142E;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.modal-close:hover {
+  background-color: #f8f9fa;
+  color: #00142E;
+}
+
+.modal-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: calc(90vh - 130px);
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.botao_Fechar {
+  background-color: #00142E;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.botao_Fechar:hover {
+  background-color: #004c8c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.botao_Fechar:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tdTitle, th {
+    width: 3% !important;
+    
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Estilos responsivos para o modal */
+@media (max-width: 992px) {
+  .modal-dialog {
+    width: 95%;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.35rem;
+  }
+  
+  .modal-content {
+    padding: 1.25rem;
+  }
+  
+  .tabela_Comparacao th,
+  .tabela_Comparacao td {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    width: 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 1rem;
+  }
+  
+  .tabela_Comparacao {
+    display: block;
+    overflow-x: auto;
+
+  }
+  
+  .tabela_Comparacao th,
+  .tabela_Comparacao td {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .image_Table {
+    max-width: 150px;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-dialog {
+    width: 100%;
+    max-height: 95vh;
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  .modal-overlay {
+    padding: 0;
+  }
+  
+  .modal-header {
+    padding: 1rem;
+  }
+  
+  .modal-content {
+    padding: 0.75rem;
+  }
+  
+  .modal-footer {
+    padding: 0.75rem 1rem;
+  }
+  
+  .tabela_Comparacao th,
+  .tabela_Comparacao td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .tabela_Comparacao td:first-child {
+    min-width: 120px;
+  }
+  
+  .image_Table {
+    max-width: 120px;
+  }
+  
+  .botao_Fechar {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Estilos para a tabela principal de carros */
+.tabela {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+.table_Cars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.table_Cars td {
+  flex: 1 1 300px;
+  max-width: 350px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table_Cars td:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.table_Cars img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.info_Carro {
+  padding: 1.5rem;
+  background-color: white !important;
+}
+
+.titulo_Carro {
+  margin-bottom: 1rem;
+}
+
+.titulo_Carro a {
+  text-decoration: none;
+}
+
+.titulo_Carro p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #00095B;
+  margin: 0;
+  text-align: center;
+}
+
+.titulo_Preco {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.preco {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+
+.input_Box {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: #00095B;
+}
+
+.input_Box:checked {
+  background-color: #00095B;
+}
+
+#simbolo_Info {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/* Estilos para a seção de botões */
+#section_Btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+#compare {
+  margin-bottom: 1rem;
+}
+
+
 
 .botao_Ranger {
     transition: all 0.3s ease-in-out;
@@ -106,10 +428,6 @@ iframe {
     color: white;
     margin: 20px 0;
 }
-
-.botao_Ranger > a {
-    color: white;
-}
   
 .botao_Ranger:hover {
     transform: translateY(3px);
@@ -120,8 +438,57 @@ iframe {
     opacity: 0.5;
 }
 
-.titulo_Carro > a{
-    text-decoration: none;
-    text-align: center;
-    color: red;
+#erro_Div {
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  display: none;
 }
+
+.tdTitle{
+    background-color: #d32f2f;
+  }
+
+/* Responsividade para a tabela principal */
+@media (max-width: 992px) {
+  .table_Cars td {
+    flex: 1 1 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table_Cars {
+    gap: 15px;
+  }
+  
+  .table_Cars td {
+    flex: 1 1 200px;
+  }
+  
+  .info_Carro {
+    padding: 1rem;
+  }
+  
+  .titulo_Carro p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .tabela {
+    margin: 1rem auto;
+  }
+  
+  .table_Cars {
+    gap: 10px;
+  }
+  
+  .table_Cars td {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+

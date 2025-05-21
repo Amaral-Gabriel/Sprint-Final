@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent { // Login class
   typePassword: string = "";
   showPasswordType: boolean = false;
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router, private titleService: Title) {
     this.loginObj = new Login();
   }
 
@@ -27,7 +28,12 @@ export class LoginComponent { // Login class
     this.showPasswordType = !this.showPasswordType;
   }
 
+  ngOnInit(){
+    this.titleService.setTitle('Login DashFord');
+  }
+
   onLogin() {
+    this.titleService.setTitle('Login DashFord');
     // Clear previous messages
     this.errorMessage = '';
     this.successMessage = '';
@@ -38,7 +44,7 @@ export class LoginComponent { // Login class
       return;
     }
 
-    // Change the port HERE
+    
     const url = `https://api-ford.onrender.com/login`; // Set the port
 
     this.http.post(url, { // Send data to server

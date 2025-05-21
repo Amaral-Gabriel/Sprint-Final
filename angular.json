@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "/Sprint-Final/",
             "outputPath": "dist/dash-ford",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -51,7 +52,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumError": "25kB"
                 }
               ],
               "outputHashing": "all"
