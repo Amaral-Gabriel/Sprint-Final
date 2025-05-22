@@ -17,6 +17,10 @@
 
 ## The project is available at: [https://amaral-gabriel.github.io/Sprint-Final/](https://amaral-gabriel.github.io/Sprint-Final/)
 
+Login = admin
+
+Password = 123
+
 
 * [About the Project](#about-the-project)
 * [How the Sprints Connect](#how-the-sprints-connect)
@@ -142,9 +146,6 @@ The development track was divided into several sprints, each with specific objec
 
 
 
-
-### This application will be available soon at the following link: https://amaral-gabriel.github.io/Sprint-Final/
-
 ## License
 
 This project is open source. Feel free to use and modify it according to your needs.  
@@ -176,7 +177,11 @@ Português :brazil:
 
 ---
 
-## O projeto está disponível em: https://amaral-gabriel.github.io/Sprint-Final/
+### O projeto está disponível em: https://amaral-gabriel.github.io/Sprint-Final/
+
+Login = admin
+
+Password = 123
 
 ## 📋 Índice
 
